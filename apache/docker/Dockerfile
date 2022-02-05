@@ -54,11 +54,11 @@ RUN ln -s /usr/local/perl-5.8.9/bin/perl /usr/local/bin/perl
 
 # mod_perl
 WORKDIR /var/perl58/
-RUN wget https://dlcdn.apache.org/perl/mod_perl-2.0.11.tar.gz
-RUN tar zxvf mod_perl-2.0.11.tar.gz
-WORKDIR /var/perl58/mod_perl-2.0.11
+RUN wget https://dlcdn.apache.org/perl/mod_perl-2.0.12.tar.gz
+RUN tar zxvf mod_perl-2.0.12.tar.gz
+WORKDIR /var/perl58/mod_perl-2.0.12
 ## Makefile.PL
-RUN perl Makefile.PL MP_APXS=/usr/bin/apxs MP_AP_CONFIGURE="prefix=/usr/local/mod_perl-2.0.11 -enable-so -enable-rewrite"
+RUN perl Makefile.PL MP_APXS=/usr/bin/apxs MP_AP_CONFIGURE="prefix=/usr/local/mod_perl-2.0.12 -enable-so -enable-rewrite"
 ## make
 RUN make
 RUN make install
